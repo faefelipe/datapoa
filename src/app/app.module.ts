@@ -3,10 +3,16 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BusLinesComponent } from './app/bus-lines/bus-lines.component';
+import { ItinerarioComponent } from './itinerario/itinerario.component';
+import { InterceptorComponent } from './interceptor/interceptor.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BusLinesComponent,
+    ItinerarioComponent,
+    InterceptorComponent
   ],
   imports: [
     BrowserModule,
