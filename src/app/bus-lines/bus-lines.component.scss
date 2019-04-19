@@ -1,0 +1,68 @@
+@import "../general";
+
+.search_lines{
+    padding-top: 15px;
+
+    .busTypes{
+        padding-top: 15px;
+
+        label{
+            padding-right: 15px;
+
+            *{
+                vertical-align: middle;
+            }
+
+            span{
+                padding-left: 5px;
+            }
+        }
+    }
+}
+
+.lines{
+    margin: 30px 0 15px;
+    height: calc(100vh - 150px);
+
+    overflow: auto;
+
+    .lines_list{
+        min-width: 480px;
+
+        .lines_title{
+            text-align: left;
+            text-transform: uppercase;
+            font-size: 20px;
+            font-weight: 700;
+
+            padding-bottom: 7.5px;
+        }
+
+        li div{
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .line_item div{
+            border-top: 1px solid $lightgrey;
+            padding: 7.5px 0;
+
+            line-height: 160%;
+        }
+
+        li div:nth-child(1){
+            width: 125px;
+        }
+
+        li div:nth-child(2){
+            padding-right: 30px;
+            width: calc(100% - 250px);
+
+            word-break: break-word;
+        }
+
+        li div:nth-child(3){
+            width: 125px;
+        }
+    }
+}

@@ -1,3 +1,34 @@
-<p>
-  bus-lines works!
-</p>
+<div class="container">
+  <form class="search_lines" [formGroup]="form">
+      <input type="text" placeholder="Busque sua linha de ônibus (digite o nome)" formControlName="filter"
+          (keyup)="filter$.next($event.target.value)">
+
+      <div class="busTypes">
+          <label>
+              <input type="radio" name="busType" value="onibus" (change)="busType$.next($event.target.value)" checked>
+              <span>Ônibus</span>
+          </label>
+
+          <label>
+              <input type="radio" name="busType" value="lotacao" (change)="busType$.next($event.target.value)">
+              <span>Lotação</span>
+          </label>
+      </div>
+  </form>
+
+  <div class="lines">
+      <ul class="lines_list">
+          <li class="lines_title">
+              <div>Código</div>
+              <div>Nome</div>
+              <div>Itinerário</div>
+          </li>
+
+          <li *ngFor="let line of busLinesFiltered" class="line_item">
+              <div>{{ line.codigo }}</div>
+              <div>{{ line.nome }}</div>
+              <div><a routerLink="/itinerario/{{ line.id }}">Visualizar</a></div>
+          </li>
+      </ul>
+  </div>
+</div>
