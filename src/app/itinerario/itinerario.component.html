@@ -1,3 +1,11 @@
-<p>
-  itinerario works!
-</p>
+<div class="container" *ngIf="itinerario">
+  <div class="title">Itinerário da linha <span>{{ line.nome }} ({{ line.codigo }})</span></div>
+
+  <a class="goback" routerLink="/">Voltar</a>
+
+  <ul class="stops_list">
+    <li class="stop_item" *ngFor="let parada of itinerario; let i = index">
+      <a href="https://www.google.com/maps/?q={{ parada.lat }},{{ parada.lng }}" target="_blank">{{ i }} - Visualizar parada no Google Maps</a>
+    </li>
+  </ul>
+</div>
