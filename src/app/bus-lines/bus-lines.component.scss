@@ -48,13 +48,16 @@
         min-width: 480px;
 
         .lines_title{
-            color: $white;
+            color: gray;
             text-align: left;
             font-size: 20px;
             font-weight: 700;
             letter-spacing: 2px;
 
-            padding-bottom: 7.5px;
+            padding: 10px;
+            border-radius: 80px;
+            margin-bottom: 5px;
+            background: #fff;
         }
 
         li div{
