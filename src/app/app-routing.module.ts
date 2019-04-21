@@ -1,10 +1,37 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { BusLinesComponent } from './bus-lines/bus-lines.component';
+import { ItinerarioComponent } from './itinerario/itinerario.component';
+
+const routes: Routes = [
+    {
+        path: '',
+        redirectTo: 'buslines',
+        pathMatch: 'full'
+    },
+
+    {
+        path: 'buslines',
+        component: BusLinesComponent
+    },
+
+    {
+        path: 'itinerario/:id',
+        component: ItinerarioComponent
+    }
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [
+        RouterModule.forRoot(
+            routes,
+            { useHash: true }
+        )
+    ],
+    exports: [
+        RouterModule
+    ]
 })
-export class AppRoutingModule { }
+
+export class AppRoutingModule{}

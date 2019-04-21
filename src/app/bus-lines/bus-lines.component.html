@@ -1,8 +1,8 @@
 <div class="container">
   <form class="search_lines" [formGroup]="form">
+
       <input type="text" placeholder="Busque sua linha de ônibus (digite o nome)" formControlName="filter"
           (keyup)="filter$.next($event.target.value)">
-
       <div class="busTypes">
           <label>
               <input type="radio" name="busType" value="onibus" (change)="busType$.next($event.target.value)" checked>
@@ -23,7 +23,6 @@
               <div>Nome</div>
               <div>Itinerário</div>
           </li>
-
           <li *ngFor="let line of busLinesFiltered" class="line_item">
               <div>{{ line.codigo }}</div>
               <div>{{ line.nome }}</div>
